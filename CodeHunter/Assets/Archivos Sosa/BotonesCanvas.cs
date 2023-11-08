@@ -41,7 +41,7 @@ public class BotonesCanvas : MonoBehaviour
    
 
     }
-    public void Play() //Método que se usa en la escena del menú principal para poder iniciar el juego.
+    public void Play() //Método que se usa en la escena del selector de redes para poder iniciar el juego.
     {
         SceneManager.LoadScene(1); //Le indica al gestor de escenas que debe cargar la escena 1, en la escena 1 se ubica el juego de testeo.
         Time.timeScale = 1f; //El tiempo es establecido a 1 (En marcha) al comenzar el juego porque, si se salió al menú mediante el botón de ir al menú, el cual se encuentra en el menú de pausa, esto significa que se pausó el juego antes, por lo que el tiempo permanecerá en 0 hasta que por medio de otra línea de código sea establecido a 1. Si se entra al juego después de haber salido desde el menú y sin establecer el tiempo a 1, este seguirá pausado porque seguirá en 0 desde la vez que se salió al menú.
