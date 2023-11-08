@@ -1,3 +1,5 @@
+using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +9,9 @@ public class PlayerDash : MonoBehaviour
     private Rigidbody2D _rb;
     private Player _player;
     private float _baseGravity;
+    private float _nivelZoomInicial;
+    public CinemachineVirtualCamera _camera;
+    public float _nivelZoomMaximo;
 
     [Header("Dash")]
     // Este script va a controlar el tiempo que va a durar nuestro dash
@@ -30,18 +35,21 @@ public class PlayerDash : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _player = GetComponent<Player>();
+        _nivelZoomInicial = _camera.m_Lens.OrthographicSize;
         _baseGravity = _rb.gravityScale;
     }
 
-
-
-    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             StartCoroutine(Dash());
-        }   
+        }        
+
+        if(_isDashing)
+        {
+            StartCoroutine(CameraZoom());
+        }
     }
     private IEnumerator Dash()
     {
@@ -60,5 +68,20 @@ public class PlayerDash : MonoBehaviour
             yield return new WaitForSeconds(_timeCanDash);
             _canDash = true;
         }
+    }
+    private IEnumerator CameraZoom()
+    {
+        float tiempo = MathF.Abs(_dashingTime / (_nivelZoomMaximo - _nivelZoomInicial / 0.10f));
+
+        for(float i = _nivelZoomInicial; i <= _nivelZoomMaximo; i += 0.10f)
+        {
+            _camera.m_Lens.OrthographicSize = i;
+            yield return new WaitForSeconds(tiempo);
+        }
+        for(float i = _nivelZoomMaximo; i >= _nivelZoomInicial; i -= 0.10f)
+        {
+            _camera.m_Lens.OrthographicSize = i;
+            yield return new WaitForSeconds(tiempo);
+        }        
     }
 }
