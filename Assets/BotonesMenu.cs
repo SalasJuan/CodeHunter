@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //SE REQUIERE AÑADIR ESTA LIBRERÍA MANUALMENTE YA QUE NO VIENE CARGADA POR DEFECTO. SU FUNCIÓN ES QUE, CONTROLA LAS ESCENAS.
 
-public class BotonesCanvas : MonoBehaviour
+public class BotonesMenu : MonoBehaviour
 {
-
-
     [SerializeField] private GameObject botonpausa; //Crea un campo interactuable llamado "botonpausa" en la sección del script dentro del editor del juego (En este caso donde habrá que arrastrar y soltar el elemento que contenga el botón que pause el juego)
     [SerializeField] private GameObject menupausa; //Crea un campo llamado "menupausa" donde irá en este caso insertado el objeto que contenga el fondo del menú de pausa junto con sus botones.
 
@@ -38,7 +36,7 @@ public class BotonesCanvas : MonoBehaviour
         Time.timeScale = 1f; //Establece el tiempo del juego en 1, lo cual significa que correrá a velocidad normal.
         botonpausa.SetActive(true); //Establecerá la visibilidad de lo que haya en la casilla llamada "botonpausa" en true (Habiendo leído lo anterior, debería estar insertado el elemento del botón que alterna el menú de pausa estando in-game)
         menupausa.SetActive(false); //Establece la visivilidad del panel del menú en false (Si es que el elemento del panel de pausa, que contiene todos los botones, ha sido arrastrado a la casilla "menupausa" del campo de este script antes)
-   
+
 
     }
     public void Play() //Método que se usa en la escena del menú principal para poder iniciar el juego.
@@ -80,6 +78,4 @@ public class BotonesCanvas : MonoBehaviour
         MainMenu.SetActive(true);
         SeleccionarMundo.SetActive(false);
     }
-
-
 }
