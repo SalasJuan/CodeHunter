@@ -726,6 +726,37 @@ MonoBehaviour:
   InfoAbajo: 0
   InfoFrente: 0
   Derecha: 1
+--- !u!1 &172574197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172574198}
+  m_Layer: 0
+  m_Name: ControladorGolpe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &172574198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172574197}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.078, y: -0.014, z: 0.013520484}
+  m_LocalScale: {x: 0.08872747, y: 0.08872747, z: 0.08872747}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1292637647}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193928725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540433848}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ControladorSuelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12534,6 +12565,7 @@ GameObject:
   - component: {fileID: 1292637648}
   - component: {fileID: 1292637652}
   - component: {fileID: 1292637651}
+  - component: {fileID: 1292637653}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -12551,7 +12583,7 @@ Animator:
   m_GameObject: {fileID: 1292637644}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 89a10e94c65eb2a4698f1e17580e13a8, type: 2}
+  m_Controller: {fileID: 9100000, guid: dc7ae004896cac743a1a250cbde7e79c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12627,6 +12659,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 540433848}
+  - {fileID: 172574198}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12686,14 +12719,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1292637644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de1e9fcc29fd33a48aff83f412dcefeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4df41c30684abd2458b5cb1a8dbb83b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _vida: 100
+  _speed: 4
   _nJumps: 1
   _JumpForce: 4
   _checkGround: {fileID: 540433848}
-  _raycastLength: 100
+  _raycastLength: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12727,6 +12761,23 @@ MonoBehaviour:
   _dashingTime: 0.2
   _dashForce: 20
   _timeCanDash: 1
+--- !u!114 &1292637653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292637644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3cbdbcccf05bb4285c97fb6101c800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorGolpe: {fileID: 172574198}
+  radioGolpe: 1
+  "da\xF1oGolpe": 5
+  TiempoAtaque: 0.7
+  TiempoSiguienteAtaque: 0
 --- !u!1 &1299036232
 GameObject:
   m_ObjectHideFlags: 0

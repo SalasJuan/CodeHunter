@@ -9,7 +9,6 @@ public class Checkpoint : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerRespawn>().ReachedCheckPoint(transform.position.x,transform.position.y);
-
             GetComponent<Animator>().enabled = true;
         } 
     }
