@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 5
-  tiempoSeguimiento: 4
+  tiempoSeguimiento: 5
 --- !u!1102 &-7655799049302530632
 AnimatorState:
   serializedVersion: 6
@@ -307,7 +307,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Distancia
-    m_EventTreshold: 8
+    m_EventTreshold: 12
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 655257482012438545}
   m_Solo: 0
