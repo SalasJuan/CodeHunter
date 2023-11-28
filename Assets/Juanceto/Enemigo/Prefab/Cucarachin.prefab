@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7669375930448009742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.44, y: 0, z: 0}
+  m_LocalPosition: {x: 0.48, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 7669375930563460526}
   - component: {fileID: 7669375930563460525}
   - component: {fileID: 7669375930563460524}
-  m_Layer: 0
+  - component: {fileID: 1724086830480791301}
+  m_Layer: 6
   m_Name: Cucarachin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,9 +59,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7669375930563460521}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.914627, y: -2.32, z: 2.455807}
-  m_LocalScale: {x: 0.77019, y: 0.77019, z: 0.77019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0287, y: -1.5776, z: 2.455807}
+  m_LocalScale: {x: 1.2055892, y: 1.1823804, z: 0.9710746}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7669375930448009743}
@@ -140,8 +141,8 @@ MonoBehaviour:
   capaFrente:
     serializedVersion: 2
     m_Bits: 8
-  DistanciaAbajo: 1.14
-  DistanciaFrente: 1.58
+  DistanciaAbajo: 3.59
+  DistanciaFrente: 1.52
   DeteccionSuelo: {fileID: 7669375930448009743}
   DeteccionFrente: {fileID: 7669375930998288733}
   InfoAbajo: 0
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023368835, y: 0.14800453}
+  m_Offset: {x: -0.023368835, y: -0.02824521}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -171,7 +172,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5384827, y: 0.78063583}
+  m_Size: {x: 2.5384827, y: 1.1331353}
   m_EdgeRadius: 0
 --- !u!50 &7669375930563460524
 Rigidbody2D:
@@ -189,11 +190,32 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 82b0ecc400645774a87b3abb7bb9037f, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1724086830480791301
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669375930563460521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa8f03ad147c5cc4bbcfbc501fe32e9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7669375930998288732
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7669375930998288732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.46, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
