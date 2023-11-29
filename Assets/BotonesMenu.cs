@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement; //SE REQUIERE AÑADIR ESTA LIBRERÍA MANUALMENT
 
 public class BotonesMenu : MonoBehaviour
 {
+    [SerializeField] private AudioClip sonidoVolver;
+    [SerializeField] private AudioSource botonSound; // Variable para el AudioSource
+    [SerializeField] private AudioClip sonidoBoton; // Variable para el AudioClip
+
     [SerializeField] private GameObject botonpausa; //Crea un campo interactuable llamado "botonpausa" en la sección del script dentro del editor del juego (En este caso donde habrá que arrastrar y soltar el elemento que contenga el botón que pause el juego)
     [SerializeField] private GameObject menupausa; //Crea un campo llamado "menupausa" donde irá en este caso insertado el objeto que contenga el fondo del menú de pausa junto con sus botones.
 
@@ -78,4 +82,30 @@ public class BotonesMenu : MonoBehaviour
         MainMenu.SetActive(true);
         SeleccionarMundo.SetActive(false);
     }
+    public void Pausa()
+    {
+        // ... (tu código actual)
+
+        // Reproduce el sonido del botón
+        botonSound.PlayOneShot(sonidoBoton);
+    }
+
+    public void Reanuda()
+    {
+        // ... (tu código actual)
+
+        // Reproduce el sonido del botón
+        botonSound.PlayOneShot(sonidoBoton);
+    }
+    public void Volver()
+    {
+        // ... (tu código actual para el botón "Volver")
+
+        // Reproduce el sonido de "Volver"
+        botonSound.PlayOneShot(sonidoVolver);
+    }
+
+
+    // Repite el mismo patrón para otros métodos según sea necesario
+
 }
