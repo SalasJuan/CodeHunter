@@ -8,9 +8,12 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private PlayerDash _playerDash;
-    private Animator _animator; // Nueva referencia al Animator
+    private Animator _animator;
+    private AudioSource _audioSource; // Corregido a AudioSource
 
     public int _vida = 100;
+
+    public AudioClip pasoSound;
 
     [Header("Movement")]
     [SerializeField] private float _speed = 4f;
@@ -30,7 +33,10 @@ public class Player : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _playerDash = GetComponent<PlayerDash>();
-        _animator = GetComponent<Animator>(); // Inicializar la referencia al Animator
+        _animator = GetComponent<Animator>();
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
+        _audioSource.clip = pasoSound;
     }
 
     void Update()
@@ -40,6 +46,11 @@ public class Player : MonoBehaviour
         if (!_playerDash.IsDashing)
         {
             Jump();
+        }
+
+        if (_isGrounded && Mathf.Abs(direction) > 0.1f)
+        {
+            PlayFootstepSound();
         }
 
         if (_isGrounded)
@@ -55,22 +66,27 @@ public class Player : MonoBehaviour
             Move();
         }
 
-        // Actualizar el parámetro "Speed" en el Animator
         _animator.SetFloat("Speed", Mathf.Abs(direction));
     }
 
     private void Move()
     {
         _rb.velocity = new Vector2(direction * _speed, _rb.velocity.y);
-
+        if (direction != 0 && _isGrounded && !_audioSource.isPlaying) // Corregido a _audioSource
+        {
+            _audioSource.PlayOneShot(pasoSound); // Corregido a _audioSource
+        }
+        else if (direction == 0 && _isGrounded && _audioSource.isPlaying)
+        {
+            _audioSource.Stop(); // Detener la reproducción si el personaje deja de caminar
+        }
         if (direction < 0)
         {
-            transform.localScale = new Vector2(-11,transform.localScale.y);
+            transform.localScale = new Vector2(-11, transform.localScale.y);
         }
-        // Si el personaje se está moviendo hacia la derecha, restaura la escala en el eje X
         else if (direction > 0)
         {
-            transform.localScale = new Vector2(11,transform.localScale.y);
+            transform.localScale = new Vector2(11, transform.localScale.y);
         }
     }
 
@@ -84,7 +100,6 @@ public class Player : MonoBehaviour
             _nJumpsValue--;
         }
 
-        // Actualizar el parámetro "IsGrounded" en el Animator
         _animator.SetBool("IsGrounded", _isGrounded);
     }
 
@@ -93,5 +108,13 @@ public class Player : MonoBehaviour
         _vida -= danio;
         if (_vida <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (!_audioSource.isPlaying)
+        {
+            _audioSource.PlayOneShot(pasoSound);
+        }
     }
 }
