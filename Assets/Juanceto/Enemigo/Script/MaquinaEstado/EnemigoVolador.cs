@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemigoVolador : MonoBehaviour
 {
+    [SerializeField] private float vida;
     [SerializeField] public Transform jugador;
     [SerializeField] private float distancia;
 
@@ -27,6 +30,17 @@ public class EnemigoVolador : MonoBehaviour
         animator.SetFloat("Distancia", distancia);
     }
 
+    public void TomarDaño(float Daño) 
+    {
+        vida -= Daño;
+
+        if (vida <= 0 )
+        {
+            Muerte();
+        }
+    }
+
+
     public void Girar(Vector3 objetivo)
     {
         if (transform.position.x < objetivo.x)
@@ -38,4 +52,10 @@ public class EnemigoVolador : MonoBehaviour
             spriteRenderer.flipX = false;
         }
     }
+
+    private void Muerte()
+    {
+        Destroy(gameObject);
+    }
+
 }

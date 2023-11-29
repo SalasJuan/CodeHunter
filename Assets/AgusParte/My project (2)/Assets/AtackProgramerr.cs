@@ -40,7 +40,16 @@ public class AtackProgramerr : MonoBehaviour
     {
         animator.SetTrigger("Ataque");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
+
+        foreach ( Collider2D colisionador in objetos)
+        {
+            if (colisionador.CompareTag("EnemigoVolador"))
+            {
+                colisionador.transform.GetComponent<EnemigoVolador>().TomarDaño(dañoGolpe);
+            }
+        }
     }
+
 
 
     private void OnDrawGizmos()
