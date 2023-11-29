@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/primer parte del mapa.unity
     guid: 45c1a41848f9635488001f126f8c6e4f
+  - enabled: 1
+    path: Assets/segunda parte del mapa.unity
+    guid: 1fd6f46c7a5ce7c4682747aee5322c58
+  - enabled: 1
+    path: Assets/AgusTucci.unity
+    guid: be5173a6d102c3c468a3cd4801a5fca5
   m_configObjects: {}
