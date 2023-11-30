@@ -42,6 +42,13 @@ public class AtackProgramerr : MonoBehaviour
 
         // Reproduce el sonido del ataque
         ReproducirSonidoAtaque();
+        foreach (Collider2D colisionador in objetos)
+        {
+            if (colisionador.CompareTag("EnemigoVolador"))
+            {
+                colisionador.transform.GetComponent<EnemigoVolador>().TomarDaño(dañoGolpe);
+            }
+        }
     }
 
     private void ReproducirSonidoAtaque()

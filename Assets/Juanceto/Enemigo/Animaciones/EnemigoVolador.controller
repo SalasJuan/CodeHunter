@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 5
-  tiempoSeguimiento: 5
+  tiempoSeguimiento: 10
 --- !u!1102 &-7655799049302530632
 AnimatorState:
   serializedVersion: 6

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8794031845012709730}
   m_Layer: 0
   m_Name: EnemigoVolador
-  m_TagString: Untagged
+  m_TagString: EnemigoVolador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jugador: {fileID: 0}
   distancia: 0
+  vida: 1
   puntoInicial: {x: 0, y: 0, z: 0}
 --- !u!95 &214704851440449460
 Animator:

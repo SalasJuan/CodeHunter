@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7669375930563460525}
   - component: {fileID: 7669375930563460524}
   - component: {fileID: 1724086830480791301}
+  - component: {fileID: 396590661998775149}
   m_Layer: 6
   m_Name: Cucarachin
   m_TagString: Untagged
@@ -157,7 +158,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7669375930563460521}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8c3abdb7f575305409024d1ac615bfbf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -216,6 +217,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &396590661998775149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669375930563460521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45c78f7e3355ba4abddb384ba16f21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7669375930998288732
 GameObject:
   m_ObjectHideFlags: 0

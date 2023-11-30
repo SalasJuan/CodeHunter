@@ -6,6 +6,7 @@ public class EnemigoVolador : MonoBehaviour
 {
     [SerializeField] public Transform jugador;
     [SerializeField] private float distancia;
+    [SerializeField] private float vida;
 
     //Punto de partida y donde va a volver
     public Vector3 puntoInicial;
@@ -36,6 +37,16 @@ public class EnemigoVolador : MonoBehaviour
         else
         {
             spriteRenderer.flipX = false;
+        }
+    }
+
+    public void TomarDaño(float Daño)
+    {
+        vida -= Daño;
+
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
