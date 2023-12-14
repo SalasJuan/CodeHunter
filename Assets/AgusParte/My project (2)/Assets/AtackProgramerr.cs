@@ -44,10 +44,11 @@ public class AtackProgramerr : MonoBehaviour
         ReproducirSonidoAtaque();
         foreach (Collider2D colisionador in objetos)
         {
-            if (colisionador.CompareTag("EnemigoVolador"))
-            {
-                colisionador.transform.GetComponent<EnemigoVolador>().TomarDaño(dañoGolpe);
-            }
+                IDaño obj = colisionador.GetComponent<IDaño>();
+                if (obj != null)
+                {
+                    obj.TomarDaño(dañoGolpe);
+                }
         }
     }
 

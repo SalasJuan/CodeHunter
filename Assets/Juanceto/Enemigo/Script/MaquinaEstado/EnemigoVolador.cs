@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemigoVolador : MonoBehaviour
+public class EnemigoVolador : MonoBehaviour, IDaño
 {
     [SerializeField] public Transform jugador;
     [SerializeField] private float distancia;
@@ -43,7 +43,6 @@ public class EnemigoVolador : MonoBehaviour
     public void TomarDaño(float Daño)
     {
         vida -= Daño;
-
         if (vida <= 0)
         {
             Destroy(gameObject);

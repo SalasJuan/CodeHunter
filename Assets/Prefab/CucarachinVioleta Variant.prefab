@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 737492610021235239, guid: e9c53c4789f6a6c488b2acec3dd88474, type: 3}
+      propertyPath: vida
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7669375930563460521, guid: e9c53c4789f6a6c488b2acec3dd88474, type: 3}
       propertyPath: m_Name
-      value: CucarachinVioleta
+      value: CucarachinVioleta Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7669375930563460521, guid: e9c53c4789f6a6c488b2acec3dd88474, type: 3}
       propertyPath: m_Layer

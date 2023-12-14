@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7669375930563460525}
   - component: {fileID: 7669375930563460524}
   - component: {fileID: 1724086830480791301}
-  - component: {fileID: 396590661998775149}
+  - component: {fileID: 737492610021235239}
   m_Layer: 6
   m_Name: Cucarachin
   m_TagString: Untagged
@@ -217,7 +217,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &396590661998775149
+--- !u!114 &737492610021235239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,9 +226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7669375930563460521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45c78f7e3355ba4abddb384ba16f21d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3beae6d5d46b46347b20dd22ddda93a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 2
 --- !u!1 &7669375930998288732
 GameObject:
   m_ObjectHideFlags: 0
